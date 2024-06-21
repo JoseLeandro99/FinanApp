@@ -1,0 +1,212 @@
+:root {
+    --default-font-color: #212121;
+    --default-background: #EEEEEE;
+    --success-color: #00897B;
+    --warning-color: #FBC02D;
+    --error-color: #E53935;
+    --alert-color: #1E88E5;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    outline: 0;
+    box-sizing: border-box;
+}
+
+body, input, button, textarea {
+    font-family: "Rubik", sans-serif;
+    font-size: 12pt;
+    color: var(--default-font-color);
+    background-color: var(--default-background);
+}
+
+.app {
+   width: 100%;
+   height: 100vh;
+
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   flex-direction: column;
+}
+
+.login-container {
+    width: 100%;
+    max-width: 480px;
+    padding: 16px;
+
+    background-color: #ffffff;
+    box-shadow: 0 0 4px #888888;
+}
+
+.login-container header {
+    text-align: center;
+    margin-top: 24px;
+}
+
+.login-container header > i {
+    font-size: 48pt;
+}
+
+.login-container .login-content {
+    margin-top: 24px;
+    text-align: center;
+}
+
+.form-container {
+    margin-top: 24px;
+}
+
+.form-container .input-container {
+    margin: 16px;
+}
+
+.form-container .input-container input {
+    width: 100%;
+    padding: 8px;
+    display: block;
+    border: 0;
+    background-color: var(--default-background);
+}
+
+.form-container .input-container button {
+    width: 196px;
+    padding: 8px;
+    border: 0;
+
+    color: #ffffff;
+    background-color: var(--alert-color);
+    cursor: pointer;
+}
+
+.error-message-container > p {
+    text-align: center;
+}
+
+.form-message-container {
+    margin-top: 24px;
+}
+
+.show { display: block; }
+.hide { display: none; }
+
+button:hover { opacity: 0.9; }
+button:active { opacity: 0.8; }
+
+
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    width: 100%;
+    padding: 8px 16px;
+    background-color: var(--alert-color);
+    color: #ffffff;
+
+    position: static;
+    top: 0;
+}
+
+.navbar i {
+    font-size: 24pt;
+}
+
+.navbar button {
+    background-color: var(--error-color);
+    color: #ffffff;
+
+    border: 0;
+    padding: 8px;
+}
+
+.navbar button > i {
+    font-size: 12pt;
+}
+
+.app-content {
+    margin: 32px 0;
+    padding: 8px 32px;
+}
+
+.app-content h2 {
+    text-align: center;
+}
+
+.list-container {
+    width: 100%;
+    max-width: 480px;
+    margin: 64px auto;
+}
+
+.list-container .list-content {
+    margin-top: 24px;
+}
+
+.list-container .list-content .list-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    margin-bottom: 16px;
+    height: 96px;
+    padding: 16px;
+    background-color: #ffffff;
+}
+
+.list-item .list-item-details {
+    flex: 1;
+}
+
+.list-item .list-item-details > label {
+    font-weight: 500;
+    font-size: 16pt;
+}
+
+.list-item .list-item-details > p {
+    font-weight: 300;
+    font-size: 10pt;
+}
+
+.list-item .list-item-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 20px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24pt;
+}
+
+
+
+.list-item-icon.positive {
+    color: var(--default-background);
+    background-color: var(--success-color);
+}
+
+.list-item-icon.negative {
+    color: var(--default-background);
+    background-color: var(--error-color);
+}
+
+.list-item .list-item-icon > i { position: relative; }
+.list-item-icon.positive > i { bottom: 5px; }
+.list-item-icon.negative > i { top: 5px; }
+
+@media screen and (max-width: 768px) {
+    .app {
+        background-color: #ffffff;
+    }
+
+    .app .login-container {
+        padding: 32px;
+        box-shadow: none;
+    }
+
+    .form-container .input-container button {
+        width: 100%;
+    }
+}
