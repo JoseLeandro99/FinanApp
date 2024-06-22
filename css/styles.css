@@ -62,7 +62,8 @@ body, input, button, textarea {
     margin: 16px;
 }
 
-.form-container .input-container input {
+.form-container .input-container input,
+.form-container .input-container input, select {
     width: 100%;
     padding: 8px;
     display: block;
@@ -74,11 +75,12 @@ body, input, button, textarea {
     width: 196px;
     padding: 8px;
     border: 0;
-
-    color: #ffffff;
-    background-color: var(--alert-color);
-    cursor: pointer;
 }
+
+button.success { background-color: var(--success-color); color: #ffffff; }
+button.warning { background-color: var(--warning-color); color: #ffffff; }
+button.error { background-color: var(--error-color); color: #ffffff; }
+button.alert { background-color: var(--alert-color); color: #ffffff; }
 
 .error-message-container > p {
     text-align: center;
@@ -91,9 +93,9 @@ body, input, button, textarea {
 .show { display: block; }
 .hide { display: none; }
 
+button { cursor: pointer; }
 button:hover { opacity: 0.9; }
 button:active { opacity: 0.8; }
-
 
 .navbar {
     display: flex;
@@ -102,8 +104,9 @@ button:active { opacity: 0.8; }
 
     width: 100%;
     padding: 8px 16px;
-    background-color: var(--alert-color);
-    color: #ffffff;
+    background-color: #ffffff;
+    color: var(--default-font-color);
+    border-bottom: 1px solid #cccccc;
 
     position: static;
     top: 0;
@@ -140,6 +143,24 @@ button:active { opacity: 0.8; }
     margin: 64px auto;
 }
 
+.list-container .list-container-header {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.list-container .list-container-header > button {
+    width: 32px;
+    height: 32px;
+    position: absolute;
+    right: 0;
+    font-size: 18pt;
+    background-color: var(--success-color);
+    color: var(--default-background);
+    border: 0;
+}
+
 .list-container .list-content {
     margin-top: 24px;
 }
@@ -149,8 +170,9 @@ button:active { opacity: 0.8; }
     justify-content: space-between;
     align-items: center;
 
+    position: relative;
     margin-bottom: 16px;
-    height: 96px;
+    height: 128px;
     padding: 16px;
     background-color: #ffffff;
 }
@@ -169,6 +191,13 @@ button:active { opacity: 0.8; }
     font-size: 10pt;
 }
 
+.list-item .list-item-details > small {
+    color: var(--default-font-color);
+    font-size: 14pt;
+    position: relative;
+    top: 12px;
+}
+
 .list-item .list-item-icon {
     width: 40px;
     height: 40px;
@@ -180,7 +209,18 @@ button:active { opacity: 0.8; }
     font-size: 24pt;
 }
 
+.list-item .delete-button {
+    width: 24px;
+    height: 24px;
+    border: 0;
+    background-color: transparent;
+    color: #d8d8d8;
+    cursor: pointer;
 
+    position: absolute;
+    top: 4px;
+    right: 4px;
+}
 
 .list-item-icon.positive {
     color: var(--default-background);

@@ -6,3 +6,14 @@ CREATE TABLE usuarios (
     email VARCHAR(255) NOT NULL UNIQUE,
     senha VARCHAR(255) NOT NULL
 );
+
+CREATE TABLE entradas (
+    id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    titulo VARCHAR(255) NOT NULL,
+    descricao VARCHAR(255) NOT NULL,
+    tipo VARCHAR(255) NOT NULL,
+    valor INT NOT NULL,
+    user_id INT NOT NULL,
+
+    FOREIGN KEY (user_id) REFERENCES usuarios(id)
+);

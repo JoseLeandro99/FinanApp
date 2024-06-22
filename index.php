@@ -29,7 +29,7 @@
                 </div>
 
                 <div class="input-container">
-                    <button type="submit">Entrar</button>
+                    <button type="submit" class="alert">Entrar</button>
                 </div>
             </div>
         </div>

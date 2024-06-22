@@ -39,7 +39,7 @@
                 </div>
 
                 <div class="input-container">
-                    <button type="button" onclick="validaRegistro();">Entrar</button>
+                    <button type="button" class="alert" onclick="validaRegistro();">Entrar</button>
                 </div>
             </div>
         </div>
