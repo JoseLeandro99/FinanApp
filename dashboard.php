@@ -15,12 +15,7 @@
 <link rel="stylesheet" href="css/modal.css" />
 
 <body>
-    <nav class="navbar">
-        <i class="fa fa-credit-card" aria-hidden="true"></i>
-        <button type="button" onclick="logout();">
-            Sair <i class="fa fa-sign-in" aria-hidden="true"></i>
-        </button>
-    </nav>
+    <?php include 'components/navbar.php'; ?>
 
     <main class="app-content">
         <div>
@@ -40,7 +35,7 @@
                 require("utils/db_connection.php");
 
                 $user_id = $_SESSION['user_id'];
-                $registro = mysqli_query($conn, "SELECT id, titulo, descricao, tipo, valor FROM entradas WHERE user_id='$user_id'");
+                $registro = mysqli_query($conn, "SELECT id, titulo, descricao, tipo, valor FROM entradas WHERE user_id='$user_id' ORDER BY valor DESC");
 
                 while($reg = mysqli_fetch_array($registro)) {
                     $tipo = $reg[3];

@@ -51,3 +51,39 @@ function deleteRegister(itemId) {
     form.submit();
     form.remove();
 }
+
+// Edit Profile Page
+
+var editButton = document.querySelector('#edit-button');
+var cancelButton = document.querySelector('#cancel-button');
+var saveButton = document.querySelector('#save-button');
+
+var profileForm = document.querySelector("#profile-form");
+
+function enableEditProfile() {
+    editButton.classList.add('hide');
+    cancelButton.classList.remove('hide');
+    saveButton.classList.remove('hide');
+    
+    ToggleReadyOnlyForm(false);
+}
+
+function disableEditProfile() {
+    editButton.classList.remove('hide');
+    cancelButton.classList.add('hide');
+    saveButton.classList.add('hide');
+    
+    ToggleReadyOnlyForm(true);
+}
+
+function ToggleReadyOnlyForm(isReadyOnly) {
+    var inputs = profileForm.querySelectorAll('input');
+    
+    Array.from(inputs).forEach(function(i) {
+        if (i.id === '#profile-id') {
+            return;
+        }
+
+        i.readOnly = isReadyOnly;
+    });
+}

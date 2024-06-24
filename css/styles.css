@@ -71,10 +71,21 @@ body, input, button, textarea {
     background-color: var(--default-background);
 }
 
+.form-container .input-container input:read-only {
+    background-color: #ffffff;
+    box-shadow: 0 0 1px var(--default-font-color);
+}
+
 .form-container .input-container button {
     width: 196px;
     padding: 8px;
     border: 0;
+}
+
+.input-container-buttons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 button.success { background-color: var(--success-color); color: #ffffff; }
@@ -121,7 +132,36 @@ button:active { opacity: 0.8; }
     color: #ffffff;
 
     border: 0;
+    border-radius: 2px;
     padding: 8px;
+}
+
+.navbar > div:first-child,
+.navbar > div:nth-child(2)
+{
+    display: flex;
+    align-items: center;
+}
+
+.navbar > div:first-child {
+    color: var(--default-font-color);
+}
+
+.navbar > div:first-child > i {
+    margin-right: 16px;
+}
+
+.navbar > div:first-child > .navbar-links {
+    margin-left: 48px;
+    display: flex;
+    align-items: center;
+}
+
+.navbar-links > a {
+    font-size: 14pt;
+    margin: 0 8px;
+    text-decoration: none;
+    color: var(--default-font-color)
 }
 
 .navbar button > i {
@@ -159,6 +199,7 @@ button:active { opacity: 0.8; }
     background-color: var(--success-color);
     color: var(--default-background);
     border: 0;
+    border-radius: 2px;
 }
 
 .list-container .list-content {
@@ -235,6 +276,37 @@ button:active { opacity: 0.8; }
 .list-item .list-item-icon > i { position: relative; }
 .list-item-icon.positive > i { bottom: 5px; }
 .list-item-icon.negative > i { top: 5px; }
+
+/* Profile */
+.profile-container {
+    width: 100%;
+    height: 90vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.profile-container .profile-content {
+    width: 100%;
+    max-width: 480px;
+    padding: 16px;
+
+    background-color: #ffffff;
+    box-shadow: 0 0 4px #888888;
+}
+
+.profile-content .profile-header {
+    text-align: center;
+}
+
+.profile-content .profile-header > i {
+    margin-top: 8px;
+    font-size: 78px;
+}
+
+.profile-content .profile-header > h2 {
+    margin-top: 12px;
+}
 
 @media screen and (max-width: 768px) {
     .app {
